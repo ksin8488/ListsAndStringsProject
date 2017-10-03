@@ -26,7 +26,7 @@ public class ListController
 	
 	private void showTheList()
 	{
-		for(int index = 0; index < myKahoots.size(); index++)
+		for(int index = 0; index < myKahoots.size(); index++)		//standard list loop let's you go through the list
 		{
 			popup.displayText(myKahoots.get(index).toString());	//use the get command to get the index of the Kahoot and show it as a string with the .toString we made
 		}
