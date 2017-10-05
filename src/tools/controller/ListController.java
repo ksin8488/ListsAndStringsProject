@@ -26,9 +26,28 @@ public class ListController
 	
 	private void showTheList()
 	{
+		String currentCreator = "";
 		for(int index = 0; index < myKahoots.size(); index++)		//standard list loop let's you go through the list
 		{
+			currentCreator = myKahoots.get(index).getCreator();		//does the same thing as the 2 comments below. No efficancy computer wise other than ease to programmer
+			
+			Kahoot currentKahoot = myKahoots.get(index);
+			String creator = currentKahoot.getCreator();
+			
 			popup.displayText(myKahoots.get(index).toString());	//use the get command to get the index of the Kahoot and show it as a string with the .toString we made
+			
+			if (currentCreator.equals("nobody"))
+			{
+				for (int loop = 0; loop < 5; loop+= 1)
+				{
+					popup.displayText("wow nobody does a lot");
+				}
+			}
+			
+			for (int currentLetterIndex = 0; currentLetterIndex < creator.length(); currentLetterIndex += 1)
+			{
+				popup.displayText(currentCreator.substring(currentLetterIndex, currentLetterIndex +1));	//letter by letter traversal of a string
+			}
 		}
 	}
 	
