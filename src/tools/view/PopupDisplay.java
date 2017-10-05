@@ -16,7 +16,7 @@ public class PopupDisplay	//right click + refactor + rename = allows you to rena
 	
 	/**
 	 * Displays a popup showing the supplied String to the user.
-	 * @param	textToDisplay The xt to be displayed
+	 * @param	textToDisplay The text to be displayed
 	 */
 	public void displayText(String textToDisplay)
 	{
