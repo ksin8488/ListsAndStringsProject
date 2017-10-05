@@ -36,4 +36,9 @@ public class Kahoot
 	{
 		return creator;
 	}
+	
+	public String getTopic()
+	{
+		return topic;
+	}
 }

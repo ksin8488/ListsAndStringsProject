@@ -44,20 +44,28 @@ public class ListController
 				}
 			}
 			
-			for (int currentLetterIndex = 0; currentLetterIndex < creator.length(); currentLetterIndex += 1)
+			for (int currentLetterIndex = 0; currentLetterIndex < creator.length(); currentLetterIndex += 1)	//use currentCreaor if you comment out the lines below the currentCreator = my... that mean the same thing.
 			{
 				popup.displayText(currentCreator.substring(currentLetterIndex, currentLetterIndex +1));	//letter by letter traversal of a string
 			}
+			
+			String topic = currentKahoot.getTopic();
+			
+			for (int letter = currentKahoot.getTopic().length() - 1; letter >= 0; letter -= 1)	//does the same as loop above but just backwards ((10, 9, 8, 7, etc.)
+				{
+					popup.displayText(topic.substring(letter, letter + 1));
+				}
+
 		}
 	}
 	
 	private void fillTheList()		//private helper method
 	{
-		Kahoot fiftyStates = new Kahoot("Kashish", 50);		//make a kahoot called fiftyStates that is made by Kashish with 50 questions
-		Kahoot mySecondKahoot = new Kahoot("Ethan", 2);
-		Kahoot bigQuiz = new Kahoot("Derek", Integer.MAX_VALUE);		//DEREK WHY WOULD YOU DO THIS?!?! (maximum of int is around 2147483647)
-		Kahoot animalColor = new Kahoot("Branton", 10);
-		Kahoot presidents = new Kahoot("Obama", 44);
+		Kahoot fiftyStates = new Kahoot("Kashish", 50, "The fifty United States");		//make a kahoot called fiftyStates that is made by Kashish with 50 questions
+		Kahoot mySecondKahoot = new Kahoot("Ethan", 2, "The Double data type");
+		Kahoot bigQuiz = new Kahoot("Derek", Integer.MAX_VALUE, "Everything - literally");		//DEREK WHY WOULD YOU DO THIS?!?! (maximum of int is around 2147483647)
+		Kahoot animalColor = new Kahoot("Branton", 10, "All the colors of the animals");
+		Kahoot presidents = new Kahoot("Obama", 44, "The 44th president of the US");
 		myKahoots.add(fiftyStates);	
 		myKahoots.add(mySecondKahoot);
 		myKahoots.add(bigQuiz);
