@@ -21,10 +21,15 @@ public class Kahoot
 		this.questionCount = questionCount;
 	}
 	
-	public String toString()
+	public String toString()			//method to create a description
 	{
 		String description = "This Kahoot was mde by " + creator + " and has " + questionCount + " questions.";
 		
 		return description;
+	}
+
+	public String getCreator()
+	{
+		return creator;
 	}
 }
