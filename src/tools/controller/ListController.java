@@ -87,14 +87,14 @@ public class ListController
 		popup.displayText("The list is still: " +myKahoots.size() + " items big.");
 		removed = myKahoots.set(2, new Kahoot());		//set's the removed to spot 2 in place of whatever was already there
 		popup.displayText("The kahoot by " + removed.getCreator() + " was replaced with on by: " + myKahoots.get(2).getCreator());
+		
+		/*Visual idea of how the Kahoots are moving around to just help me organize things
+		 * 01234 - how it starts
+		 * 0123 - 3 from before is moved and everything after shifts up an index (0124) is the order of content
+		 * 01234 - 3 is now where 0 is and 0 and the rest have been shifted down (30124)
+		 * 012345 - new Kahoot() is moved into the 2nd index and everything else past shifts down (350124)
+		 */
 	}
-	
-	/*Visual idea of how the Kahoots are moving around to just help me organize things
-	 * 01234 - how it starts
-	 * 0123 - 3 from before is moved and everything after shifts up an index (0124) is the order of content
-	 * 01234 - 3 is now where 0 is and 0 and the rest have been shifted down (30124)
-	 * 012345 - new Kahoot() is moved into the 2nd index and everything else past shifts down (350124)
-	 */
 	
 	private void listPractice()
 	{	Kahoot removed = myKahoots.remove(2);	//removes the kahoot from spot 2 and is stored as "removed"
@@ -102,6 +102,12 @@ public class ListController
 		popup.displayText("I removed Kahoot by " + removed.getCreator());
 		myKahoots.add(new Kahoot("Alec", 20, "Twenty Questions"));		//creates a new Kahoot that it pops onto the end of the list
 		popup.displayText("The list now has: " + myKahoots.size() + " items inside.");
+		
+		/* Visual reference/guide for the myKahoot() list changes in listPractice()
+		 * 012345 - # of indexes starting (350124 is the order of what's inside)
+		 * 01234 - object from index 2 is removed (35124)
+		 * 012345 - added a brand new object to the list that is placed at the end (351246)
+		 */
 		
 		for(int index = 0; index < myKahoots.size(); index++)
 		{
