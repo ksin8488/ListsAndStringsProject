@@ -22,6 +22,8 @@ public class ListController
 		myKahoots.add(myFirstKahoot);
 		fillTheList();		//creates an instance just by calling it
 		showTheList();		//created after fillTheList but it doesn't matter as it's what's called first matters
+		changeTheList();
+		listPractice();
 	}
 	
 	private void showTheList()
@@ -44,17 +46,17 @@ public class ListController
 				}
 			}
 			
-			for (int currentLetterIndex = 0; currentLetterIndex < creator.length(); currentLetterIndex += 1)	//use currentCreaor if you comment out the lines below the currentCreator = my... that mean the same thing.
-			{
-				popup.displayText(currentCreator.substring(currentLetterIndex, currentLetterIndex +1));	//letter by letter traversal of a string
-			}
+//			for (int currentLetterIndex = 0; currentLetterIndex < creator.length(); currentLetterIndex += 1)	//use currentCreator if you comment out the lines below the currentCreator = my... that mean the same thing.
+//			{
+//				popup.displayText(currentCreator.substring(currentLetterIndex, currentLetterIndex +1));	//letter by letter traversal of a string
+//			}
 			
-			String topic = currentKahoot.getTopic();
-			
-			for (int letter = currentKahoot.getTopic().length() - 1; letter >= 0; letter -= 1)	//does the same as loop above but just backwards ((10, 9, 8, 7, etc.)
-				{
-					popup.displayText(topic.substring(letter, letter + 1));
-				}
+//			String topic = currentKahoot.getTopic();
+//			
+//			for (int letter = currentKahoot.getTopic().length() - 1; letter >= 0; letter -= 1)	//does the same as loop above but just backwards ((10, 9, 8, 7, etc.)
+//				{
+//					popup.displayText(topic.substring(letter, letter + 1));
+//				}
 
 		}
 	}
@@ -71,5 +73,36 @@ public class ListController
 		myKahoots.add(bigQuiz);
 		myKahoots.add(animalColor);
 		myKahoots.add(presidents);
+	}
+	
+	private void changeTheList()
+	{
+		popup.displayText("The current list size is:" + myKahoots.size());
+		Kahoot removed = myKahoots.remove(3);	//takes out the 3rd index of the list (so the 4th item)
+		popup.displayText("I removed Kahoot by " + removed.getCreator());
+		popup.displayText("The list now has: " + myKahoots.size() + " items inside.");
+		myKahoots.add(0, removed);	//moves the first kahoot to the spot where removed was
+		
+		popup.displayText("The list is still: " +myKahoots.size() + " items big.");
+		removed = myKahoots.set(2, new Kahoot());		//set's the removed to spot 2 in place of whatever was already there
+		popup.displayText("The kahoot by " + removed.getCreator() + " was replaced with on by: " + myKahoots.get(2).getCreator());
+	}
+	
+	private void listPractice()
+	{	Kahoot removed = myKahoots.remove(2);	//removes the kahoot from spot 2 and is stored as "removed"
+		myKahoots.add(removed);		//Takes the kahoot that is in "removed" and adds it to the end of the list
+		popup.displayText("I removed Kahoot by " + removed.getCreator());
+		myKahoots.add(new Kahoot("Alec", 20, "Twenty Questions"));		//creates a new Kahoot that it pops onto the end of the list
+		popup.displayText("The list now has: " + myKahoots.size() + " items inside.");
+		
+		for(int index = 0; index < myKahoots.size(); index++)
+		{
+			popup.displayText(myKahoots.get(index).toString()); 		//Displays the new list from first to last
+		}
+		
+		for(int index = myKahoots.size() - 1; index >= 0; index--)
+		{
+			popup.displayText(myKahoots.get(index).toString()); 		//Displays the new list from last to first
+		}
 	}
 }
