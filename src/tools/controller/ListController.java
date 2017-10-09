@@ -75,6 +75,7 @@ public class ListController
 		myKahoots.add(presidents);
 	}
 	
+
 	private void changeTheList()
 	{
 		popup.displayText("The current list size is:" + myKahoots.size());
@@ -87,6 +88,13 @@ public class ListController
 		removed = myKahoots.set(2, new Kahoot());		//set's the removed to spot 2 in place of whatever was already there
 		popup.displayText("The kahoot by " + removed.getCreator() + " was replaced with on by: " + myKahoots.get(2).getCreator());
 	}
+	
+	/*Visual idea of how the Kahoots are moving around to just help me organize things
+	 * 01234 - how it starts
+	 * 0123 - 3 from before is moved and everything after shifts up an index (0124) is the order of content
+	 * 01234 - 3 is now where 0 is and 0 and the rest have been shifted down (30124)
+	 * 012345 - new Kahoot() is moved into the 2nd index and everything else past shifts down (350124)
+	 */
 	
 	private void listPractice()
 	{	Kahoot removed = myKahoots.remove(2);	//removes the kahoot from spot 2 and is stored as "removed"
@@ -104,5 +112,7 @@ public class ListController
 		{
 			popup.displayText(myKahoots.get(index).toString()); 		//Displays the new list from last to first
 		}
+		
+		
 	}
 }
