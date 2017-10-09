@@ -115,4 +115,14 @@ public class ListController
 		
 		
 	}
+	
+	public PopupDisplay getPopup()
+	{
+		return popup;
+	}
+	
+	public ArrayList<Kahoot> getMyKahoots()
+	{
+		return (ArrayList<Kahoot>)myKahoots;	//have to tell the program for myKahoots TO BE an array list
+	}
 }
