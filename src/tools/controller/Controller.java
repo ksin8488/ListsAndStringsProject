@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import tools.model.Kahoot;			//must add because Kahoot class is in a different file
 import tools.view.PopupDisplay;		//let's you add GUI Displays
 
-public class ListController
+public class Controller
 {
 	private List<Kahoot> myKahoots;
 	private PopupDisplay popup;
 	
-	public ListController()
+	public Controller()
 	{
 		myKahoots = new ArrayList<Kahoot>();		//use array list instead because using list is too vague
 		popup = new PopupDisplay();
