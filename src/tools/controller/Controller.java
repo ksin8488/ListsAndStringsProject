@@ -131,4 +131,19 @@ public class Controller
 	{
 		return (ArrayList<Kahoot>)myKahoots;	//have to tell the program for myKahoots TO BE an array list
 	}
+	
+	public int findMaxLength(ArrayList<String> myList)
+	{
+		int max = 0;
+		
+		for (int index= 0; index < myList.size(); index++)
+		{
+			if(myList.get(index).length() > max)		//change all maxs to mins and initialize int min = Integer.max_value; to find the smallest one
+			{										// to find the biggest or smallest, you start by finding the opposite and working to the desired size
+				max = myList.get(index).length();
+			}
+		}
+		
+		return max;
+	}
 }
